@@ -1,0 +1,47 @@
+* {
+	/* in firefox */
+
+	scrollbar-width: thin;
+	scrollbar-color: var(--colorSecondary) var(--LetBgDoc);
+}
+
+/* scroll */
+/* in webkit/blink (chromium) */
+
+*::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+
+*::-webkit-scrollbar:vertical {
+	width: 0.8em;
+}
+
+*::-webkit-scrollbar-button:increment {
+	display: none;
+}
+
+*::-webkit-scrollbar:horizontal {
+	height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--colorSecondary);
+	border-radius: 20px;
+	border: 4px solid var(--LetBgDoc);
+}
+
+*::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+
+/* variables */
+:root {
+	/* color document appropriate */
+	--w: hsl(0, 0%, 95%);
+	--b: hsl(0, 0%, 5%);
+	--bgB: hsl(0, 0%, 15%);
+	background-color: var(--bgB);
+
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol, 'Noto Color Emoji';
+}
