@@ -17,21 +17,24 @@ body {
 .card {
 	width: 90%;
 	height: 90%;
-	background-color: hsl(220, 80%, 55%, 0.8);
-	border-radius: 5px;
+	background-color: hsl(220, 90%, 55%, 0.8);
+	border-radius: 10px;
 	position: relative;
 	overflow: hidden;
-	border: 5px solid hsl(220, 80%, 30%, 1);
+	border: 5px solid hsl(220, 100%, 40%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
 }
 
 .card--logo {
-	font-weight: 500;
 	position: absolute;
 	z-index: -100;
 	left: -10%;
 	bottom: 50px;
 	font-size: 12rem;
-	color: hsla(0, 0%, 90%);
+	color: var(--w);
 }
 
 .card--img {
@@ -54,24 +57,77 @@ body {
 	top: 8%;
 }
 
-.card--name,
-.card--ci {
-	font-weight: 500;
-}
-
 .card--name {
+	color: var(--w);
 	font-size: 1.5rem;
 	margin-bottom: 5px;
 }
 
 .card--ci {
-	color: hsl(235, 100%, 35%);
+	color: var(--aside);
+}
+
+.card--position {
+	width: 75%;
+	text-align: center;
+	box-sizing: content-box;
+	padding: 25px;
+	font-size: 1.3rem;
+	color: var(--w);
+	background-color: hsla(360, 80%, 40%, 0.75);
+	border-radius: 20px;
+	line-height: 1.5;
+	position: relative;
+	top: -40px;
+}
+
+.card--wrapper-two {
+	--widthWrapperTwo: 150px;
+	width: 100%;
+	position: absolute;
+	top: 68%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.card--secretary,
+.card--direction {
+	width: 40%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	line-height: 1.3;
+	color: var(--w);
+	border-radius: 20px;
+	background-color: hsla(0, 0%, 5%, 0.75);
+	position: relative;
+	font-size: 1.1rem;
+}
+
+.card--secretary > div,
+.card--direction > div {
+	width: var(--widthWrapperTwo);
+	color: var(--w);
+	position: absolute;
+	top: -40%;
+	left: calc(50% - var(--widthWrapperTwo) / 2);
+	font-size: 1.2rem;
+}
+
+.card--fecha {
+	color: var(--aside);
+	position: absolute;
+	right: 5%;
+	bottom: 2.5%;
 }
 
 @media (min-width: 450px) {
 	.card--img {
 		width: 90px;
 		height: 90px;
+		left: 8%;
 	}
 
 	.card--wrapper-one {
@@ -81,6 +137,21 @@ body {
 
 	.card--name {
 		font-size: 1.7rem;
+	}
+
+	.card--position {
+		font-size: 1.5rem;
+	}
+
+	.card--secretary,
+	.card--direction {
+		padding: 15px;
+		font-size: 1.4rem;
+	}
+
+	.card--secretary > div,
+	.card--direction > div {
+		font-size: 1.5rem;
 	}
 }
 
@@ -98,6 +169,7 @@ body {
 	.card--img {
 		width: 110px;
 		height: 110px;
+		left: 6%;
 	}
 
 	.card--wrapper-one {
@@ -111,6 +183,28 @@ body {
 	}
 
 	.card--ci {
+		font-size: 1.2rem;
+	}
+
+	.card--position {
+		font-size: 1.7rem;
+		top: -30px;
+	}
+
+	.card--secretary,
+	.card--direction {
+		padding: 20px;
+		width: 35%;
+		font-size: 1.5rem;
+	}
+
+	.card--secretary > div,
+	.card--direction > div {
+		top: -50%;
+		font-size: 1.7rem;
+	}
+
+	.card--fecha {
 		font-size: 1.2rem;
 	}
 }
