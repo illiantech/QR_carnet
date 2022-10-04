@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "atropos": "^1.0.2",
     "autoprefixer": "^10.4.12",
     "vite": "^3.1.0",
     "vite-plugin-html": "^3.2.0"

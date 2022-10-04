@@ -7,33 +7,46 @@
 		<link rel="stylesheet" href="./css/config/Normalize.css" />
 		<link rel="stylesheet" href="./css/config/template.css" />
 		<link rel="stylesheet" href="./css/modules/card.css" />
+		<link rel="stylesheet" href="./path/to/atropos.css" />
 
 		<title>QR Carnet</title>
 	</head>
 	<body>
-		<div class="card-wrapper">
-			<div class="card">
-				<div class="card--logo">DGI</div>
-				<img class="card--img" src="carnet.jpg" alt="" />
-				<div class="card--wrapper-one">
-					<div class="card--name">Daniel Illianoff Pimentel Gamez</div>
-					<div class="card--ci">CI: 28262997</div>
-				</div>
+		<!-- main Atropos container (required), add your custom class here -->
+		<div class="atropos my-atropos">
+			<!-- scale container (required) -->
+			<div class="atropos-scale">
+				<!-- rotate container (required) -->
+				<div class="atropos-rotate">
+					<!-- inner container (required) -->
+					<div class="atropos-inner">
+						<!-- put your custom content here -->
+						<div class="card">
+							<div class="card--logo" data-atropos-offset="5">DGI</div>
+							<img class="card--img" data-atropos-offset="5" src="carnet.jpg" alt="" />
+							<div class="card--wrapper-one">
+								<div class="card--name">Daniel Illianoff Pimentel Gamez</div>
+								<div class="card--ci">CI: 28262997</div>
+							</div>
 
-				<div class="card--position">Jefe de División de redes y telecomunicaciones</div>
-				<div class="card--wrapper-two">
-					<div class="card--secretary">
-						<div>Secretaría</div>
-						Secretaria del despacho
-					</div>
-					<div class="card--direction">
-						<div>Dirección</div>
-						Direccion general de informatica
+							<div class="card--position" data-atropos-offset="5">Jefe de División de redes y telecomunicaciones</div>
+							<div class="card--wrapper-two">
+								<div class="card--secretary">
+									<div>Secretaría</div>
+									Secretaria del despacho
+								</div>
+								<div class="card--direction">
+									<div>Dirección</div>
+									Direccion general de informatica
+								</div>
+							</div>
+							<div class="card--fecha">Ingresado: 2022-09-01</div>
+						</div>
 					</div>
 				</div>
-				<div class="card--fecha">Ingresado: 2022-09-01</div>
 			</div>
 		</div>
+
 		<script src="./js/front/rotate_3d.js" type="module"></script>
 	</body>
 </html>
