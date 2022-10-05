@@ -85,6 +85,8 @@ body {
 	line-height: 1.5;
 	margin-bottom: 90px;
 	margin-top: 200px;
+	/* margin-bottom: 70px;
+	margin-top: 180px; */
 }
 
 .card--wrapper-two {
@@ -143,19 +145,13 @@ body {
 		font-size: 1.7rem;
 	}
 
-	.card--position {
-		font-size: 1.5rem;
-	}
-
 	.card--secretary,
 	.card--direction {
 		padding: 15px;
-		font-size: 1.4rem;
 	}
 
 	.card--secretary-title,
 	.card--direction-title {
-		font-size: 1.5rem;
 		top: -45px;
 	}
 }
@@ -191,21 +187,22 @@ body {
 	}
 
 	.card--position {
-		font-size: 1.7rem;
+		font-size: 1.5rem;
 		margin-top: 215px;
+		/* margin-top: 200px; */
 	}
 
 	.card--secretary,
 	.card--direction {
 		padding: 20px;
 		width: 35%;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 	}
 
 	.card--secretary-title,
 	.card--direction-title {
 		top: -50px;
-		font-size: 1.7rem;
+		font-size: 1.5rem;
 	}
 
 	.card--date-entry {
