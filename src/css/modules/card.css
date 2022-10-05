@@ -6,24 +6,25 @@ body {
 
 .my-atropos {
 	width: 90%;
-	height: 620px;
 	max-width: 440px;
 }
 
 .atropos-inner {
 	border-radius: 10px;
+	height: 100%;
 }
 
 .card {
 	width: 100%;
 	height: 100%;
+	min-height: 600px;
 	background-color: hsl(220, 80%, 55%, 0.8);
 	border-radius: 10px;
 	position: relative;
 	overflow: hidden;
 	border: 5px solid hsl(220, 100%, 40%);
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 	font-weight: 500;
 }
@@ -38,11 +39,11 @@ body {
 }
 
 .card--img {
-	width: 80px;
-	height: 80px;
+	width: 90px;
+	height: 90px;
 	position: absolute;
-	top: 7.5%;
-	left: 5%;
+	left: 6%;
+	top: 7%;
 	object-fit: cover;
 	object-position: top;
 	border-radius: 50%;
@@ -51,9 +52,9 @@ body {
 .card--wrapper-one {
 	display: flex;
 	flex-direction: column;
-	width: 220px;
+	width: 190px;
 	position: absolute;
-	left: 35%;
+	left: 38%;
 	top: 8%;
 }
 
@@ -61,10 +62,17 @@ body {
 	color: var(--w);
 	font-size: 1.5rem;
 	margin-bottom: 5px;
+	text-transform: capitalize;
 }
 
 .card--ci {
 	color: var(--aside);
+}
+
+.card--position::first-letter,
+.card--secretary-paragraph::first-letter,
+.card--direction-paragraph::first-letter {
+	text-transform: uppercase;
 }
 
 .card--position {
@@ -77,17 +85,16 @@ body {
 	background-color: hsla(360, 80%, 40%, 0.75);
 	border-radius: 20px;
 	line-height: 1.5;
-	position: relative;
-	top: -40px;
+	margin-bottom: 90px;
+	margin-top: 200px;
 }
 
 .card--wrapper-two {
 	--widthWrapperTwo: 150px;
 	width: 100%;
-	position: absolute;
-	top: 68%;
 	display: flex;
 	justify-content: space-evenly;
+	margin-bottom: 80px;
 }
 
 .card--secretary,
@@ -106,17 +113,15 @@ body {
 	font-size: 1.1rem;
 }
 
-.card--secretary > div,
-.card--direction > div {
+.card--secretary-title,
+.card--direction-title {
 	width: var(--widthWrapperTwo);
-	color: var(--w);
 	position: absolute;
-	top: -40%;
-	left: calc(50% - var(--widthWrapperTwo) / 2);
+	top: -35px;
 	font-size: 1.2rem;
 }
 
-.card--fecha {
+.card--date-entry {
 	color: var(--aside);
 	position: absolute;
 	right: 5%;
@@ -125,14 +130,15 @@ body {
 
 @media (min-width: 450px) {
 	.card--img {
-		width: 90px;
-		height: 90px;
+		width: 110px;
+		height: 110px;
 		left: 8%;
+		top: 6%;
 	}
 
 	.card--wrapper-one {
-		width: 280px;
-		left: 37.5%;
+		width: 225px;
+		left: 42%;
 	}
 
 	.card--name {
@@ -149,16 +155,16 @@ body {
 		font-size: 1.4rem;
 	}
 
-	.card--secretary > div,
-	.card--direction > div {
+	.card--secretary-title,
+	.card--direction-title {
 		font-size: 1.5rem;
+		top: -45px;
 	}
 }
 
 @media (min-width: 1100px) {
 	.my-atropos {
 		max-width: 1000px;
-		height: 600px;
 	}
 
 	.card--logo {
@@ -167,14 +173,14 @@ body {
 	}
 
 	.card--img {
-		width: 110px;
-		height: 110px;
-		left: 6%;
+		width: 140px;
+		height: 140px;
+		top: 5%;
 	}
 
 	.card--wrapper-one {
 		width: 650px;
-		left: 25%;
+		left: 30%;
 		top: 10%;
 	}
 
@@ -188,7 +194,7 @@ body {
 
 	.card--position {
 		font-size: 1.7rem;
-		top: -30px;
+		margin-top: 215px;
 	}
 
 	.card--secretary,
@@ -198,13 +204,13 @@ body {
 		font-size: 1.5rem;
 	}
 
-	.card--secretary > div,
-	.card--direction > div {
-		top: -50%;
+	.card--secretary-title,
+	.card--direction-title {
+		top: -50px;
 		font-size: 1.7rem;
 	}
 
-	.card--fecha {
+	.card--date-entry {
 		font-size: 1.2rem;
 	}
 }
