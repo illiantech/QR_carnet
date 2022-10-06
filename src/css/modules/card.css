@@ -30,9 +30,8 @@ body {
 .card--logo {
 	position: absolute;
 	z-index: -100;
-	left: -10%;
-	bottom: 50px;
-	font-size: 12rem;
+	left: -25%;
+	bottom: -30%;
 	color: var(--w);
 }
 
@@ -162,8 +161,8 @@ body {
 	}
 
 	.card--logo {
-		bottom: -25px;
-		font-size: 20rem;
+		left: 0;
+		top: 0;	
 	}
 
 	.card--img {
