@@ -30,9 +30,9 @@ body {
 .card--logo {
 	position: absolute;
 	z-index: -100;
-	left: -25%;
-	bottom: -30%;
-	color: var(--w);
+	left: -35%;
+	bottom: -25%;
+	width: 700px;
 }
 
 .card--img {
@@ -62,7 +62,9 @@ body {
 	text-transform: capitalize;
 }
 
-.card--ci {
+.card--ci,
+.card--date-entry,
+.card--status {
 	color: var(--aside);
 }
 
@@ -120,14 +122,28 @@ body {
 	font-size: 1.2rem;
 }
 
-.card--date-entry {
-	color: var(--aside);
+.card--date-entry,
+.card--status {
 	position: absolute;
 	right: 5%;
+}
+
+.card--date-entry {
 	bottom: 2.5%;
 }
 
+.card--status {
+	bottom: 6%;
+	width: 162.16px;
+}
+
 @media (min-width: 450px) {
+	.card--logo {
+		/* 35 25 */
+		left: -32%;
+		bottom: -30%;
+	}
+
 	.card--img {
 		width: 110px;
 		height: 110px;
@@ -161,8 +177,11 @@ body {
 	}
 
 	.card--logo {
-		left: 0;
-		top: 0;	
+		/* 35 25 - 32 30 */
+		left: -22.5%;
+		bottom: -55%;
+
+		/* background-color: red; */
 	}
 
 	.card--img {
@@ -181,7 +200,9 @@ body {
 		font-size: 2.3rem;
 	}
 
-	.card--ci {
+	.card--ci,
+	.card--date-entry,
+	.card--status {
 		font-size: 1.2rem;
 	}
 
@@ -204,7 +225,8 @@ body {
 		font-size: 1.5rem;
 	}
 
-	.card--date-entry {
-		font-size: 1.2rem;
+	.card--status {
+		bottom: 7%;
+		width: 194.58px;
 	}
 }

@@ -21,19 +21,31 @@ const direcTxt = $('.card--direction-paragraph');
 
 const dateEntry = $('.card--date-entry');
 
+const status = ['Activo', 'Inactivo', 'Extraviado'];
+
+const cardStatus = $('.card--status');
+
 // tomando dato desde url
 
-const dataCI = location.pathname.slice(location.pathname.lastIndexOf('/') + 1);
+const pathCI = location.pathname.slice(location.pathname.lastIndexOf('/') + 1);
 
-// Peticion de datos del usuario
-axios({
-	method: 'GET',
-	url: `http://api-carnet.guarico.gob.ve/client/${dataCI}`
-})
-	.then((res) => {
-		console.log(res);
+const getData = async () => {
+	try {
+		// Peticion de datos del usuario
 
-		const { nombre, cedula_identidad, demonimacion_puesto, deno_cod_secretaria, deno_cod_direccion, fecha_ingreso } = res.data;
+		const data = await axios({
+			method: 'GET',
+			url: `http://api-carnet.guarico.gob.ve/client/${pathCI}`
+		}).then((res) => res.data);
+
+		// Peticion del Status del usuario
+
+		const dataStatus = await axios({
+			method: 'GET',
+			url: `http://historial-carnets.guarico.gob.ve/historial?cedula=${cedula_identidad}`
+		}).then((res) => res.data);
+
+		const { nombre, cedula_identidad, demonimacion_puesto, deno_cod_secretaria, deno_cod_direccion, fecha_ingreso } = data;
 
 		let nameParse = nombre.toLowerCase().trim().split(/\s+/);
 
@@ -50,16 +62,22 @@ axios({
 		direcTxt.textContent = deno_cod_direccion.toLowerCase().trim();
 
 		dateEntry.textContent = `Ingresado: ${fecha_ingreso.trim()}`;
-	})
-	.catch((err) => {
-		alert(`Error de conexión: \n Los 'datos' del usuario no pudieron ser encontrados \n ${err} `);
-	});
+
+		// datos del Status del usuario
+
+		cardStatus.textContent = status[dataStatus.estado];
+	} catch (err) {
+		alert(`Error de conexión: \n Los 'datos' del usuario no pueden ser encontrados \n ${err} `);
+	}
+};
+
+getData();
 
 // Peticion de foto del usuario
 
 axios({
 	method: 'GET',
-	url: `http://api-carnet.guarico.gob.ve/photo/${dataCI}`,
+	url: `http://api-carnet.guarico.gob.ve/photo/${pathCI}`,
 	responseType: 'blob'
 })
 	.then((res) => {
