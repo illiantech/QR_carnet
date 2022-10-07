@@ -36,14 +36,10 @@ const getData = async () => {
 		const data = await axios({
 			method: 'GET',
 			url: `http://api-carnet.guarico.gob.ve/client/${pathCI}`
-		}).then((res) => res.data);
-
-		// Peticion del Status del usuario
-
-		const dataStatus = await axios({
-			method: 'GET',
-			url: `http://historial-carnets.guarico.gob.ve/historial?cedula=${cedula_identidad}`
-		}).then((res) => res.data);
+		}).then((res) => {
+			console.log(res.data);
+			return res.data;
+		});
 
 		const { nombre, cedula_identidad, demonimacion_puesto, deno_cod_secretaria, deno_cod_direccion, fecha_ingreso } = data;
 
@@ -63,7 +59,15 @@ const getData = async () => {
 
 		dateEntry.textContent = `Ingresado: ${fecha_ingreso.trim()}`;
 
-		// datos del Status del usuario
+		// Peticion del Status del usuario
+
+		const dataStatus = await axios({
+			method: 'GET',
+			url: `http://historial-carnets.guarico.gob.ve/historial?cedula=${pathCI}&Nombre=&fecha=&entregado=false&userViews=0`
+		}).then((res) => {
+			console.log(res.data);
+			return res.data[0][0];
+		});
 
 		cardStatus.textContent = status[dataStatus.estado];
 	} catch (err) {
