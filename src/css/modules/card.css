@@ -60,12 +60,12 @@
 
 .card--ci,
 .card--wrapper-three {
-	color: var(--aside);
+	color: var(--w);
 }
 
-.card--position::first-letter,
-.card--secretary-paragraph::first-letter,
-.card--direction-paragraph::first-letter {
+.card--position,
+.card--secretary-paragraph,
+.card--direction-paragraph{
 	text-transform: uppercase;
 }
 
@@ -124,7 +124,13 @@
 }
 
 .card--status {
-	margin-bottom: 3px;
+	background-color: rgb(5, 5, 94);
+	padding: 5px;
+	border-radius: 10px;
+	padding-top: 1ch;
+	font-weight: bold;
+	font-size: 1.5rem;
+	color: var(--w);
 }
 
 @media (min-width: 450px) {
@@ -197,8 +203,7 @@
 	}
 
 	.card--ci,
-	.card--date-entry,
-	.card--status {
+	.card--date-entry {
 		font-size: 1.2rem;
 	}
 
