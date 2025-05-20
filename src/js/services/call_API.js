@@ -35,7 +35,7 @@ const getData = async () => {
 
 		const { data } = await axios({
 			method: 'GET',
-			url: `http://historial-carnets.guarico.gob.ve/historial?cedula=${pathCI}&Nombre=&fecha=&entregado=false&userViews=0`
+			url: `${root}/historial?cedula=${pathCI}&Nombre=&fecha=&entregado=false&userViews=0`
 		})
 
 		if (data.length > 0) {
